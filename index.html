@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cozy Corner</title>
     <link rel="stylesheet" href="./vendor/normalize.css" />
     <link rel="stylesheet" href="./pages/index.css" />
@@ -13,13 +13,21 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-
-</head>
-<body>
+  </head>
+  <body>
     <div class="page">
-        <h1 class="page__title">Cozy Corner</h1>
+      <h1 class="page__title">Cozy Corner</h1>
+      <section>
+        <img id="waterfall-img" src="./images/room.png" alt="Waterfall" />
+        <audio
+          id="waterfall-audio"
+          src="./sounds/waterfall_sound.mp3"
+          preload="auto"
+          audio.loop="true;"
+        ></audio>
+      </section>
     </div>
-    
+
     <script src="./index.js"></script>
-</body>
+  </body>
 </html>
