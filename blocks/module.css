@@ -1,0 +1,17 @@
+.page__module {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-79%, -50%);
+    width: 32%;
+    height: 42%;
+    background-color: #7b7e75;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    z-index: 999;
+    color: #fff;
+    text-align: center;
+  }
+  
