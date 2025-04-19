@@ -9,6 +9,10 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  background-image: url(../images/background.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .image-wrapper {
