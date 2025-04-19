@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cozy Corner</title>
     <link rel="stylesheet" href="./vendor/normalize.css" />
     <link rel="stylesheet" href="./pages/index.css" />
@@ -12,28 +12,30 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-
-</head>
-<body>
+  </head>
+  <body>
+    <div class="page__overlay" hidden></div>
     <div class="page">
-        <div class="image-wrapper">
-            <img class="page__house" src="./images/house.png" />
-            <img class="page__window" src="./images/window.png" />
-            <img class="page__tv" src="./images/tv.png" />
-            <img class="page__book" src="./images/book.png" />
-            <img class="page__seating" src="./images/seating.png" />
-            <img class="page__tv-on" src="./images/tv-on.gif" />
-            <img class="page__plant" src="./images/plant.png" />
-            <img class="page__radio" src="./images/radio.png" />
-          </div>
-          <div class="page__module" id="windowModal">
-            <div class="circle" id="relaxCircle">
-              <p id="circleText">LET'S RELAX</p>
-              <div class="circle-gradient" id="circleGradient"></div>
-            </div>
-            <button id="closeModal" class="page__module-close-btn">Close</button>
+      <div class="image-wrapper">
+        <img class="page__house" src="./images/house.png" />
+        <img class="page__window" src="./images/window.png" />
+        <img class="page__tv" src="./images/tv.png" />
+        <img class="page__book" src="./images/book.png" />
+        <img class="page__seating" src="./images/seating.png" />
+        <img class="page__tv-on" src="./images/tv-on.gif" />
+        <img class="page__plant" src="./images/plant.png" />
+        <img class="page__radio" src="./images/radio.png" />
+        <img class="page__lamp" src="./images/lamp.png" />
+      </div>
+      <div class="page__module" id="windowModal">
+        <div class="circle" id="relaxCircle">
+          <p id="circleText">LET'S RELAX</p>
+          <div class="circle-gradient" id="circleGradient"></div>
+        </div>
+        <button id="closeModal" class="page__module-close-btn">Close</button>
+      </div>
     </div>
-    
+
     <script src="./index.js"></script>
-</body>
+  </body>
 </html>

@@ -6,6 +6,9 @@ const modal = document.getElementById("windowModal");
 const relaxCircle = document.getElementById("relaxCircle");
 const circleText = document.getElementById("circleText");
 
+const lamp = document.querySelector(".page__lamp");
+const lampOverlay = document.querySelector(".page__overlay");
+
 let inhaleDuration = 3000; 
 let holdDuration = 4000; 
 let exhaleDuration = 3000; 
@@ -20,6 +23,10 @@ openModalImg.addEventListener("click", () => {
 relaxCircle.addEventListener("click", () =>{
     breatheCycle();
 })
+
+lamp.addEventListener("click", () => {
+  lampOverlay.hidden = !lampOverlay.hidden;
+});
 
 // Window close button
 closeModalBtn.addEventListener("click", () => {

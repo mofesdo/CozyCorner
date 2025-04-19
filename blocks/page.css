@@ -13,12 +13,13 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
 }
 
 .image-wrapper {
   position: relative;
   margin-left: 160px;
-  width: 90vw;
+  width: 100vw;
   max-height: 85vh;
 }
 
@@ -98,6 +99,31 @@
   cursor: pointer;
   clip-path: polygon(6% 37%, 13% 33%, 13% 28%, 44% 8%, 76% 23%, 82% 30%, 83% 35%, 91% 40%, 91% 45%, 88% 47%, 88% 74%, 84% 77%, 80% 74%, 80% 55%, 54% 71%, 53% 94%, 49% 97%, 45% 94%, 45% 71%, 17% 53%, 17% 73%, 13% 76%, 9% 73%, 9% 45%, 6% 43%);
   transition: zoomPulse 0.3s ease;
+}
+
+.page__lamp {
+  position: absolute;
+  bottom: 10%;
+  left: 25%;
+  width: 12%;
+  height: auto;
+  z-index: 10;
+  cursor: pointer;
+  clip-path: polygon(40% 0, 60% 0, 66% 28%, 53% 35%, 61% 87%, 64% 89%, 60% 100%, 38% 100%, 37% 90%, 48% 35%, 33% 27%);
+  transition: zoomPulse 0.3s ease;
+}
+.page__lamp:active{
+  animation: zoomPulse 3s ease;
+}
+.page__overlay {
+  position: absolute;
+  top: 38%;
+  left: 17%;
+  width: 50%;
+  height: 50%;
+  z-index: 11;
+  background: radial-gradient(circle, rgba(255, 173, 22, 0.5) 0%, transparent 60%);
+  pointer-events: none; /* So it doesn't block clicks if it's just for visual effect */
 }
 
 .page__radio:active {
