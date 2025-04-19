@@ -71,6 +71,38 @@
   transition: zoomPulse 0.3s ease;
 }
 
+.page__plant {
+  position: absolute;
+  top: -2%;
+  left: 18%;
+  width: 69%;
+  height: auto;
+  z-index: 10;
+  cursor: pointer;
+  clip-path: polygon(23% 92%, 23% 70%, 21% 42%, 22% 35%, 24% 25%, 25% 35%, 29% 24%, 31% 29%, 29% 71%, 30% 86%, 29% 100%, 30% 96%, 30% 100%, 30% 94%, 32% 94%, 34% 91%);
+  transition: zoomPulse 0.3s ease;
+}
+
+.page__radio {
+  position: absolute;
+  top: 44%;
+  left: 40%;
+  width: 12%;
+  height: auto;
+  z-index: 10;
+  cursor: pointer;
+  clip-path: polygon(6% 37%, 13% 33%, 13% 28%, 44% 8%, 76% 23%, 82% 30%, 83% 35%, 91% 40%, 91% 45%, 88% 47%, 88% 74%, 84% 77%, 80% 74%, 80% 55%, 54% 71%, 53% 94%, 49% 97%, 45% 94%, 45% 71%, 17% 53%, 17% 73%, 13% 76%, 9% 73%, 9% 45%, 6% 43%);
+  transition: zoomPulse 0.3s ease;
+}
+
+.page__radio:active {
+  animation: zoomPulse 3s ease;
+}
+
+.page__plant:active {
+  animation: zoomPulse 3s ease;
+}
+
 .page__seating:active {
   animation: zoomPulse 3s ease;
 }
