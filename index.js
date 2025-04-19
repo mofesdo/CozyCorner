@@ -9,6 +9,10 @@ const circleText = document.getElementById("circleText");
 const lamp = document.querySelector(".page__lamp");
 const lampOverlay = document.querySelector(".page__overlay");
 
+const radio = document.querySelector(".page__radio");
+const music = document.querySelector("#bgMusic");
+music.volume = 0.75;
+
 let inhaleDuration = 3000; 
 let holdDuration = 4000; 
 let exhaleDuration = 3000; 
@@ -27,6 +31,13 @@ relaxCircle.addEventListener("click", () =>{
 lamp.addEventListener("click", () => {
   lampOverlay.hidden = !lampOverlay.hidden;
 });
+radio.addEventListener("click", () => {
+  if (music.paused) {
+    music.play();
+  } else {
+    music.pause();
+  }
+})
 
 // Window close button
 closeModalBtn.addEventListener("click", () => {
