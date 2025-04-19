@@ -17,6 +17,7 @@
 
 .image-wrapper {
   position: relative;
+  margin-left: 160px;
   width: 90vw;
   max-height: 85vh;
 }
