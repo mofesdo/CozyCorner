@@ -34,25 +34,30 @@ tvToggle.addEventListener('click', () => {
 });
 console.log("linked");
 
-// Plant Module Open
+// Plant CustomeModule Open
 document.querySelector('.page__plant').addEventListener('click', function () {
   modalCustom.style.display = 'flex';
+  modalCustom.classList.add('page__module--pop');
 });
 
-// Close  Modal
-closeModalBtn.addEventListener("click", () => {
-  modalDefault.style.display = "none";
-});
-
-// Close CustomModal
+// Close (plant)CustomModal
 closeModalCustom.addEventListener("click", () => {
   modalCustom.style.display = "none";
+  modalCustom.classList.remove('page__module--pop');
+});
+
+
+// Close window Modal
+closeModalBtn.addEventListener("click", () => {
+  modalDefault.style.display = "none";
 });
 
 // open window
 openModalImg.addEventListener("click", () => {
   modalDefault.style.display = "flex";
+  modalDefault.classList.add('page__module--pop-default');
 });
+
 
 // Start window relax when pressed the button 
 relaxCircle.addEventListener("click", () => {
@@ -71,7 +76,7 @@ radio.addEventListener("click", () => {
   }
 });
 
-// Flower randomizer
+// Flower planting randomizer
 flowerThumbs.forEach((thumb) => {
   thumb.addEventListener("click", () => {
     const newFlower = document.createElement("img");
@@ -80,20 +85,22 @@ flowerThumbs.forEach((thumb) => {
     newFlower.style.width = "60px";
     newFlower.style.height = "60px";
     newFlower.style.pointerEvents = "none";
+    newFlower.classList.add("flower--pop");
 
-    // Randomizer of position below 250px - Internet help and AI help because I didn't have the scope of knowledge yet but I fairly understand the use it
-    const modalRect = modalCustom.getBoundingClientRect();
-    const maxX = modalRect.width - 60;
-    const minY = 250;
-    const maxY = modalRect.height - 60;
 
-    const randomX = Math.floor(Math.random() * maxX);
-    const randomY = Math.floor(Math.random() * (maxY - minY) + minY);
+    // Randomizer of positions and below 250px - Internet help and AI help because I didn't have the scope of knowledge yet but I fairly understand the use it
+    const modalRect = modalCustom.getBoundingClientRect();// method for DOM elem. Returns objects size and relative positions on the viewport
+    const maxX = modalRect.width - 60;  //x axis width so flower doesnt go outside the right edge so we subtract 60px to be sure it doesnt go out
+    const minY = 250; // this is y axis maximum reach, meaning do not go over 250px from bottom up
+    const maxY = modalRect.height - 60; // same thing as the x axis 
 
-    newFlower.style.left = `${randomX}px`;
-    newFlower.style.top = `${randomY}px`;
+    const randomX = Math.floor(Math.random() * maxX); // random left position between 0 and maxX
+    const randomY = Math.floor(Math.random() * (maxY - minY) + minY); // random top position but always 250px more so it doesnt show up too high
 
-    modalCustom.appendChild(newFlower);
+    newFlower.style.left = `${randomX}px`; //place the flower x/y cordinates
+    newFlower.style.top = `${randomY}px`; //place the flower x/y cordinates
+
+    modalCustom.appendChild(newFlower); // this actually adds the flower to the modal
   });
 });
 
