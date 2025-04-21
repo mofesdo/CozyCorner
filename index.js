@@ -96,7 +96,7 @@ flowerThumbs.forEach((thumb) => {
     // Randomizer of positions and below 250px - Internet help and AI help because I didn't have the scope of knowledge yet but I fairly understand the use it
     const modalRect = modalCustom.getBoundingClientRect(); // method for DOM elem. Returns objects size and relative positions on the viewport
     const maxX = modalRect.width - 60; //x axis width so flower doesnt go outside the right edge so we subtract 60px to be sure it doesnt go out
-    const minY = 250; // this is y axis maximum reach, meaning do not go over 250px from bottom up
+    const minY = 120; // this is y axis maximum reach, meaning do not go over 250px from bottom up
     const maxY = modalRect.height - 60; // same thing as the x axis
 
     const randomX = Math.floor(Math.random() * maxX); // random left position between 0 and maxX
