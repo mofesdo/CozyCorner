@@ -1,73 +1,79 @@
+//Window const
 const openModalImg = document.querySelector(".page__window");
 const closeModalBtn = document.getElementById("closeModal");
-const closeModalCustom = document.getElementById("closeModalCustom");
 const modalDefault = document.getElementById("windowModalDefault");
+
+//Plant const
+const closeModalCustom = document.getElementById("closeModalCustom");
 const modalCustom = document.getElementById("windowModalCustom");
+
+//Breathing const
 const relaxCircle = document.getElementById("relaxCircle");
 const circleText = document.getElementById("circleText");
+//Breathing duration let
+let inhaleDuration = 3000;
+let holdDuration = 4000;
+let exhaleDuration = 3000;
+let repeatCount = 5;
 
+//Lamp Const
 const lamp = document.querySelector(".page__lamp");
 const lampOverlay = document.querySelector(".page__overlay");
 
+//Radio Const
 const radio = document.querySelector(".page__radio");
 const music = document.querySelector("#bgMusic");
+//Music Volume
+music.volume = 0.75;
 
+//TV const
 const tvToggle = document.querySelector(".page__tv");
 const tvOn = document.querySelector(".page__tv-on");
 
+//Flower const
 const flowerThumbs = document.querySelectorAll(".flower-thumb");
 
-music.volume = 0.75;
-
-let inhaleDuration = 3000; 
-let holdDuration = 4000; 
-let exhaleDuration = 3000; 
-let repeatCount = 5;
-
-// TV on
-tvToggle.addEventListener('click', () => {
-  if (tvOn.style.display === 'none' || tvOn.style.display === '') {
-    tvOn.style.display = 'block';
+// TV turning on function
+tvToggle.addEventListener("click", () => {
+  if (tvOn.style.display === "none" || tvOn.style.display === "") {
+    tvOn.style.display = "block";
   } else {
-    tvOn.style.display = 'none';
+    tvOn.style.display = "none";
   }
 });
 console.log("linked");
 
-// Plant CustomeModule Open
-document.querySelector('.page__plant').addEventListener('click', function () {
-  modalCustom.style.display = 'flex';
-  modalCustom.classList.add('page__module--pop');
+// Plant Module Open
+document.querySelector(".page__plant").addEventListener("click", function () {
+  modalCustom.style.display = "flex";
+  modalCustom.classList.add("page__module--pop");
 });
-
-// Close (plant)CustomModal
+// Plant Module Closing
 closeModalCustom.addEventListener("click", () => {
   modalCustom.style.display = "none";
-  modalCustom.classList.remove('page__module--pop');
+  modalCustom.classList.remove("page__module--pop");
 });
 
-
-// Close window Modal
+// Window Module Opening
+openModalImg.addEventListener("click", () => {
+  modalDefault.style.display = "flex";
+  modalDefault.classList.add("page__module--pop-default");
+});
+// Window Module Closing
 closeModalBtn.addEventListener("click", () => {
   modalDefault.style.display = "none";
 });
-
-// open window
-openModalImg.addEventListener("click", () => {
-  modalDefault.style.display = "flex";
-  modalDefault.classList.add('page__module--pop-default');
-});
-
-
-// Start window relax when pressed the button 
+// Start window relax when pressed the button
 relaxCircle.addEventListener("click", () => {
   breatheCycle();
 });
 
+//Lamp Turning on-off
 lamp.addEventListener("click", () => {
   lampOverlay.hidden = !lampOverlay.hidden;
 });
 
+//Music starting-stopping
 radio.addEventListener("click", () => {
   if (music.paused) {
     music.play();
@@ -76,7 +82,7 @@ radio.addEventListener("click", () => {
   }
 });
 
-// Flower planting randomizer
+// Plant Module Randomizer
 flowerThumbs.forEach((thumb) => {
   thumb.addEventListener("click", () => {
     const newFlower = document.createElement("img");
@@ -87,12 +93,11 @@ flowerThumbs.forEach((thumb) => {
     newFlower.style.pointerEvents = "none";
     newFlower.classList.add("flower--pop");
 
-
     // Randomizer of positions and below 250px - Internet help and AI help because I didn't have the scope of knowledge yet but I fairly understand the use it
-    const modalRect = modalCustom.getBoundingClientRect();// method for DOM elem. Returns objects size and relative positions on the viewport
-    const maxX = modalRect.width - 60;  //x axis width so flower doesnt go outside the right edge so we subtract 60px to be sure it doesnt go out
+    const modalRect = modalCustom.getBoundingClientRect(); // method for DOM elem. Returns objects size and relative positions on the viewport
+    const maxX = modalRect.width - 60; //x axis width so flower doesnt go outside the right edge so we subtract 60px to be sure it doesnt go out
     const minY = 250; // this is y axis maximum reach, meaning do not go over 250px from bottom up
-    const maxY = modalRect.height - 60; // same thing as the x axis 
+    const maxY = modalRect.height - 60; // same thing as the x axis
 
     const randomX = Math.floor(Math.random() * maxX); // random left position between 0 and maxX
     const randomY = Math.floor(Math.random() * (maxY - minY) + minY); // random top position but always 250px more so it doesnt show up too high
@@ -104,7 +109,7 @@ flowerThumbs.forEach((thumb) => {
   });
 });
 
-// Breathing function
+// Window Module - Breathing
 function breatheCycle() {
   let count = 0;
 
@@ -150,4 +155,3 @@ function breatheCycle() {
   }
   animateBreathing();
 }
-
