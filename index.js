@@ -36,7 +36,7 @@ console.log("linked");
 
 // Plant Module Open
 document.querySelector('.page__plant').addEventListener('click', function () {
-  modalCustom.style.display = 'flex';  // Show custom modal
+  modalCustom.style.display = 'flex';
 });
 
 // Close  Modal
@@ -81,7 +81,7 @@ flowerThumbs.forEach((thumb) => {
     newFlower.style.height = "60px";
     newFlower.style.pointerEvents = "none";
 
-    // Randomizer of position below 250px - Internet help and AI help because I didn't have the scope of knowledge yet but I fairly understand the use of it now
+    // Randomizer of position below 250px - Internet help and AI help because I didn't have the scope of knowledge yet but I fairly understand the use it
     const modalRect = modalCustom.getBoundingClientRect();
     const maxX = modalRect.width - 60;
     const minY = 250;
@@ -143,3 +143,4 @@ function breatheCycle() {
   }
   animateBreathing();
 }
+

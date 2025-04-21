@@ -23,18 +23,29 @@
         <img class="page__book" src="./images/book.png" />
         <img class="page__seating" src="./images/seating.png" />
         <img class="page__tv-on" src="./images/tv-on.gif" />
-        <img class="page__plant" src="./images/plant.png" />
+        <img class="page__plant" src="./images/plant.png" id="page__plant" />
         <img class="page__radio" src="./images/radio.png" />
         <img class="page__lamp" src="./images/lamp.png" />
       </div>
-      <div class="page__module" id="windowModal">
+      <div class="page__module" id="windowModalDefault">
         <div class="circle" id="relaxCircle">
           <p id="circleText">LET'S RELAX</p>
           <div class="circle-gradient" id="circleGradient"></div>
         </div>
         <button id="closeModal" class="page__module-close-btn">Close</button>
       </div>
-    </div>
+      
+      <div class="customModal" id="windowModalCustom" style="display: none;">
+        <div class="flower-toolbar">
+          <img class="flower-thumb" src="./images/flower1.png" />
+          <img class="flower-thumb" src="./images/flower2.png" />
+          <img class="flower-thumb" src="./images/flower3.png" />
+          <img class="flower-thumb" src="./images/plant1.png" />
+          <img class="flower-thumb" src="./images/plant2.png" />
+        </div>
+        
+        <button id="closeModalCustom" class="close-btn">X</button>
+      </div> 
 
     <audio id="bgMusic" src="./music.mp3" loop></audio>
     <script src="./index.js"></script>
