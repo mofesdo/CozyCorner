@@ -153,6 +153,7 @@
 
 
 .page__tv-on {
+  display: none;
   transform: scale(0.37) skewY(-26deg);
   position: absolute;
   top: 9%;

@@ -11,12 +11,26 @@ const lampOverlay = document.querySelector(".page__overlay");
 
 const radio = document.querySelector(".page__radio");
 const music = document.querySelector("#bgMusic");
+
+const tvToggle = document.querySelector(".page__tv")
+const tvOn = document.querySelector(".page__tv-on")
+
 music.volume = 0.75;
 
 let inhaleDuration = 3000; 
 let holdDuration = 4000; 
 let exhaleDuration = 3000; 
 let repeatCount = 5;
+
+// TV on
+tvToggle.addEventListener('click', () => {
+  if (tvOn.style.display === 'none' || tvOn.style.display === '') {
+    tvOn.style.display = 'block';
+  } else {
+    tvOn.style.display = 'none';
+  }
+});
+
 
 // Opening the window
 openModalImg.addEventListener("click", () => {
