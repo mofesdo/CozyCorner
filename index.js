@@ -8,8 +8,8 @@ const closeModalCustom = document.getElementById("closeModalCustom");
 const modalCustom = document.getElementById("windowModalCustom");
 
 //Bookshelf Const
-const closeBookshelfModal = document.getElementById("closeModalCustom");
-const bookshelfModal = document.getElementById("bookshelfModalCustom");
+const closeBookshelfModal = document.getElementById("closeBookshelfModal");
+const modalBookshelf = document.getElementById("bookshelfModalCustom");
 
 //Breathing const
 const relaxCircle = document.getElementById("relaxCircle");
@@ -38,7 +38,9 @@ const tvOn = document.querySelector(".page__tv-on");
 const flowerThumbs = document.querySelectorAll(".flower-thumb");
 
 //Books const
-const books = document.querySelectorAll(".books");
+const booksThumbs = document.querySelectorAll(".books");
+const bookDisplay = document.querySelector(".bookshelfQuotes");
+const booksQuote = document.getElementById("booksQuote");
 
 // Couch tv chanalls
 const theater = document.querySelector(".page__seating");
@@ -69,17 +71,18 @@ document.querySelector(".page__plant").addEventListener("click", function () {
 // Plant Module Closing
 closeModalCustom.addEventListener("click", () => {
   modalCustom.style.display = "none";
-  modalCustom.classList.remove("page__module--pop");
+  modalCustom.classList.remove("page__module--pop-up");
 });
-//Bookshelf Module Openning
-document.querySelector(".page__bookshelf").addEventListener("click", function () {
-  bookshelfModal.style.display = "flex";
-  bookshelfModal.classList.add("page__module--pop");
+// Bookshelf Module Open
+document.querySelector(".page__book").addEventListener("click", function () {
+  modalBookshelf.style.display = "flex";
+  modalBookshelf.classList.add("page__module--pop");
 });
-//Bookshelf Module Closing
+// Bookshelf Module Closing
 closeBookshelfModal.addEventListener("click", () => {
-  bookshelfModal.style.display = "none";
-  bookshelfModal.classList.remove("page__module--pop");
+  modalBookshelf.style.display = "none";
+  modalBookshelf.classList.remove("page__module--pop-up");
+});
 
 // Window Module Opening
 openModalImg.addEventListener("click", () => {
@@ -107,6 +110,16 @@ radio.addEventListener("click", () => {
   } else {
     music.pause();
   }
+});
+
+//Bookshelf Module Randomizer
+booksThumbs.forEach((book) => {
+  book.addEventListener("click", () => {
+    const quote = book.getAttribute("data-quote");
+    booksQuote.innerText = quote;
+    const bookImages = book.getAttribute("date-image");
+    modalBookshelf.style.background = `url('${bookImages}')`;
+  });
 });
 
 // Plant Module Randomizer
@@ -203,4 +216,4 @@ thumbnails.forEach((thumb) => {
       currentTime
     )}&enablejsapi=1`;
   });
-})});
+});
