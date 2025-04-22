@@ -194,3 +194,15 @@ thumbnails.forEach((thumb) => {
 //waterfall sound
 
 const waterfall = new WaterfallSound("#waterfall-img", "#waterfall-audio");
+
+//switch
+const darkToggle = document.getElementById("darkModeToggle");
+const darkOverlay = document.getElementById("darkOverlay");
+
+darkToggle.addEventListener("change", () => {
+  if (darkToggle.checked) {
+    darkOverlay.classList.add("active");
+  } else {
+    darkOverlay.classList.remove("active");
+  }
+});
