@@ -1,3 +1,5 @@
+import { WaterfallSound } from "./components/waterfall.js";
+
 //Window const
 const openModalImg = document.querySelector(".page__window");
 const closeModalBtn = document.getElementById("closeModal");
@@ -183,6 +185,12 @@ thumbnails.forEach((thumb) => {
     const videoId = thumb.dataset.video;
     const currentTime = player.contentWindow?.postMessage ? lastTime : 0;
     videoOverlay.style.display = "none";
-    player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&start=${Math.floor(currentTime)}&enablejsapi=1`;
+    player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&start=${Math.floor(
+      currentTime
+    )}&enablejsapi=1`;
   });
 });
+
+//waterfall sound
+
+const waterfall = new WaterfallSound("#waterfall-img", "#waterfall-audio");
