@@ -33,6 +33,17 @@ const tvOn = document.querySelector(".page__tv-on");
 //Flower const
 const flowerThumbs = document.querySelectorAll(".flower-thumb");
 
+// Couch tv chanalls
+const theater = document.querySelector(".page__seating");
+const theaterWindow = document.getElementById("theaterWindow");
+const theaterClose = document.querySelector(".closeTheater");
+const thumbnails = document.querySelectorAll(".video-thumb");
+const player = document.getElementById("youtubePlayer");
+const videoOverlay = document.querySelector(".video-overlay");
+let lastPlaybackTime = 0;
+let currentVideoId = "";
+let lastTime = 0;
+
 // TV turning on function
 tvToggle.addEventListener("click", () => {
   if (tvOn.style.display === "none" || tvOn.style.display === "") {
@@ -155,3 +166,23 @@ function breatheCycle() {
   }
   animateBreathing();
 }
+
+//Theater Open Model
+theater.addEventListener("click", () => {
+  theaterWindow.style.display = "";
+  theaterWindow.classList.add("page__module--videos");
+});
+//Theater Close Model
+theaterClose.addEventListener("click", () => {
+  theaterWindow.style.display = "none";
+});
+
+//Video Starting
+thumbnails.forEach((thumb) => {
+  thumb.addEventListener("click", () => {
+    const videoId = thumb.dataset.video;
+    const currentTime = player.contentWindow?.postMessage ? lastTime : 0;
+    videoOverlay.style.display = "none";
+    player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&start=${Math.floor(currentTime)}&enablejsapi=1`;
+  });
+});
