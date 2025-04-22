@@ -7,6 +7,10 @@ const modalDefault = document.getElementById("windowModalDefault");
 const closeModalCustom = document.getElementById("closeModalCustom");
 const modalCustom = document.getElementById("windowModalCustom");
 
+//Bookshelf Const
+const closeBookshelfModal = document.getElementById("closeModalCustom");
+const bookshelfModal = document.getElementById("bookshelfModalCustom");
+
 //Breathing const
 const relaxCircle = document.getElementById("relaxCircle");
 const circleText = document.getElementById("circleText");
@@ -32,6 +36,9 @@ const tvOn = document.querySelector(".page__tv-on");
 
 //Flower const
 const flowerThumbs = document.querySelectorAll(".flower-thumb");
+
+//Books const
+const books = document.querySelectorAll(".books");
 
 // Couch tv chanalls
 const theater = document.querySelector(".page__seating");
@@ -64,6 +71,15 @@ closeModalCustom.addEventListener("click", () => {
   modalCustom.style.display = "none";
   modalCustom.classList.remove("page__module--pop");
 });
+//Bookshelf Module Openning
+document.querySelector(".page__bookshelf").addEventListener("click", function () {
+  bookshelfModal.style.display = "flex";
+  bookshelfModal.classList.add("page__module--pop");
+});
+//Bookshelf Module Closing
+closeBookshelfModal.addEventListener("click", () => {
+  bookshelfModal.style.display = "none";
+  bookshelfModal.classList.remove("page__module--pop");
 
 // Window Module Opening
 openModalImg.addEventListener("click", () => {
@@ -183,6 +199,8 @@ thumbnails.forEach((thumb) => {
     const videoId = thumb.dataset.video;
     const currentTime = player.contentWindow?.postMessage ? lastTime : 0;
     videoOverlay.style.display = "none";
-    player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&start=${Math.floor(currentTime)}&enablejsapi=1`;
+    player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&start=${Math.floor(
+      currentTime
+    )}&enablejsapi=1`;
   });
-});
+})});
