@@ -12,6 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/x-icon" href="./images/calm.png">
   </head>
   <body>
     <div class="page__overlay" hidden></div>
@@ -23,18 +24,85 @@
         <img class="page__book" src="./images/book.png" />
         <img class="page__seating" src="./images/seating.png" />
         <img class="page__tv-on" src="./images/tv-on.gif" />
-        <img class="page__plant" src="./images/plant.png" />
+        <img class="page__plant" src="./images/plant.png" id="page__plant" />
         <img class="page__radio" src="./images/radio.png" />
         <img class="page__lamp" src="./images/lamp.png" />
       </div>
-      <div class="page__module" id="windowModal">
+
+      <div class="page__module" id="windowModalDefault">
         <div class="circle" id="relaxCircle">
           <p id="circleText">LET'S RELAX</p>
           <div class="circle-gradient" id="circleGradient"></div>
         </div>
         <button id="closeModal" class="page__module-close-btn">Close</button>
       </div>
-    </div>
+      
+      <div class="customModal" id="windowModalCustom" style="display: none;">
+        <div class="flower-toolbar">
+          <img class="flower-thumb" src="./images/flower1.png" />
+          <img class="flower-thumb" src="./images/flower2.png" />
+          <img class="flower-thumb" src="./images/flower3.png" />
+          <img class="flower-thumb" src="./images/plant1.png" />
+          <img class="flower-thumb" src="./images/plant2.png" />
+        </div>
+        <button id="closeModalCustom" class="close-btn">X</button>
+      </div> 
+
+      <div class="theaterModal" id="theaterWindow">
+        <div class="theater-grid">
+          <div class="video-gallery">
+            <div class="video-thumb" data-video="W19PdslW7iw">
+              <img src="https://img.youtube.com/vi/W19PdslW7iw/0.jpg" alt="Video Thumbnail">
+            </div>
+            <div class="video-thumb" data-video="2DXqMBXmP8Q">
+              <img src="https://img.youtube.com/vi/2DXqMBXmP8Q/0.jpg" alt="Video Thumbnail">
+
+            </div>
+            <div class="video-thumb" data-video="9fr6geQtd88">
+              <img src="https://img.youtube.com/vi/9fr6geQtd88/0.jpg" alt="Video Thumbnail">
+
+            </div>
+            <div class="video-thumb" data-video="_SU1QQhCDcs">
+              <img src="https://img.youtube.com/vi/_SU1QQhCDcs/0.jpg" alt="Video Thumbnail">
+
+            </div>
+          
+            <div class="video-thumb" data-video="Ei0QHQbOOFU">
+              <img src="https://img.youtube.com/vi/Ei0QHQbOOFU/0.jpg" alt="Video Thumbnail">
+
+            </div>
+            <div class="main-video" id="mainVideo">
+              <iframe id="youtubePlayer" frameborder="0"   allow="autoplay; encrypted-media"allowfullscreen></iframe>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/1280px-Logo_of_YouTube_%282015-2017%29.svg.png" alt="ovelay image" class="video-overlay">
+            </div>
+            <div class="video-thumb" data-video="_toq43rAAlI">
+              <img src="https://img.youtube.com/vi/_toq43rAAlI/0.jpg" alt="Video Thumbnail">
+
+            </div>
+          
+            <div class="video-thumb" data-video="rO0MT1oPPK4">
+              <img src="https://img.youtube.com/vi/rO0MT1oPPK4/0.jpg" alt="Video Thumbnail">
+
+            </div>
+            <div class="video-thumb" data-video="xvlZV34tWSA">
+              <img src="https://img.youtube.com/vi/xvlZV34tWSA/0.jpg" alt="Video Thumbnail">
+
+            </div>
+            <div class="video-thumb" data-video="eKf_G0ZSmBI">
+              <img src="https://img.youtube.com/vi/eKf_G0ZSmBI/0.jpg" alt="Video Thumbnail">
+
+            </div>
+            <div class="video-thumb" data-video="MH6uK2-ieb0">
+              <img src="https://img.youtube.com/vi/MH6uK2-ieb0/0.jpg" alt="Video Thumbnail">
+
+            </div>
+          </div>
+        </div>
+      
+        <button class="closeTheater">X</button>
+      </div>
+      
+      
 
     <audio id="bgMusic" src="./music.mp3" loop></audio>
     <script src="./index.js"></script>

@@ -1,75 +1,283 @@
 .page__module {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 54%;
-    transform: translate(-79%, -50%);
-    width: 32%;
-    height: 42%;
-    background-color: #7b7e75;
-    border-radius: 16px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    padding: 2rem;
-    z-index: 999;
-    color: #fff;
-    text-align: center;
-  }
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 54%;
+  transform: translate(-79%, -50%);
+  width: 32%;
+  height: 42%;
+  background-color: #7b7e75;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  z-index: 999;
+  color: #fff;
+  text-align: center;
+}
 
-  .page__module-close-btn {
-    position: absolute;
-    bottom: 20px; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    padding: 10px 20px;
-    background: #fff;
-    color: #333;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
+.page__module-close-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background: #fff;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
-  /* used website (https://codepen.io/aliemir/pen/oPvwPw) to figure this part out with ai */
-  .circle {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, #4a90e2 100%);
-    background-size: 0% 0%;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: width 3s ease-in-out, height 3s ease-in-out, background-size 3s ease-in-out;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  }
-  
-  .circle p {
-    color: white;
-    font-size: 1.2rem;
-    text-align: center;
-    user-select: none;
-  }
-  
-  
-  .circle:active {
-    box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.4);
-  }
-  
+.page__module--pop {
+  animation: modulePop 0.6s ease-out forwards;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.page__module--pop-default {
+  animation: modulePop 0.6s ease-out forwards;
+  position: absolute;
+  top: 27%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+.page__module--videos {
+  animation: modulePop 0.6s ease-out forwards;
+  transform: translate(-50%, -50%);
+}
 
-  .circle-gradient {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
-    z-index: 1;
-    transition: width 3s linear, height 3s linear, background 4s linear;
+/* used website (https://codepen.io/aliemir/pen/oPvwPw) to figure this part out with ai */
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.5) 0%,
+    #4a90e2 100%
+  );
+  background-size: 0% 0%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: width 3s ease-in-out, height 3s ease-in-out,
+    background-size 3s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.circle p {
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  user-select: none;
+}
+.circle:active {
+  box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+.circle-gradient {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 70%
+  );
+  z-index: 1;
+  transition: width 3s linear, height 3s linear, background 4s linear;
+}
+
+.customModal {
+  position: fixed;
+  top: 20%;
+  left: 14%;
+  width: 60%;
+  height: 59%;
+  border-radius: 10px;
+  border: 1px solid white;
+  background-image: url("/images/field.jpg");
+  background-size: cover;
+  background-position: center;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  font-size: 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.flower-toolbar {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+
+.flower-thumb {
+  width: 50px;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 8px;
+  object-fit: contain;
+  background-color: white;
+  padding: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.flower-thumb:hover {
+  transform: scale(1.05);
+  border-color: #ffeb3b;
+}
+
+.flower--pop {
+  animation: flowerPop 0.5s ease;
+}
+
+.theaterModal {
+  position: absolute;
+  display: flex;
+  z-index: 1000;
+}
+
+.closeTheater {
+  position: absolute;
+  left: 473px;
+  top: -22px;
+  z-index: 1000;
+  width: 40px;
+  height: 80px;
+  background: linear-gradient(180deg, #6dbf5b, #4caf50);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.closeTheater:hover {
+  background: linear-gradient(180deg, #4caf50, #388e3c);
+  transform: scale(1.05);
+}
+
+.theater-grid {
+  position: absolute;
+  width: 956px;
+  height: 96px;
+  left: -484px;
+  top: -293px;
+}
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
+  padding: 7px;
+  background-color: #e9f5e1;
+  justify-items: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  top: 0;
+}
+
+.video-thumb {
+  width: 140px;
+  height: 95px;
+  background-color: #c2e0c6;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.video-thumb:hover {
+  transform: scale(1.05);
+}
+
+.main-video {
+  grid-column: 2 / span 2;
+  grid-row: 2;
+  width: 640px;
+  height: 360px;
+  position: relative;
+}
+
+.main-video iframe {
+  width: 640px;
+  height: 360px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.video-thumb img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 540px;
+  height: 260px;
+  pointer-events: none;
+}
+
+@keyframes flowerPop {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
   }
-  
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes modulePop {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
