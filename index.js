@@ -117,7 +117,7 @@ booksThumbs.forEach((book) => {
   book.addEventListener("click", () => {
     const quote = book.getAttribute("data-quote");
     booksQuote.innerText = quote;
-    const bookImages = book.getAttribute("date-image");
+    const bookImages = book.getAttribute("data-image");
     modalBookshelf.style.background = `url('${bookImages}')`;
   });
 });
