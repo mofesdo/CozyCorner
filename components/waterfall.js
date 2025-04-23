@@ -13,6 +13,7 @@ export class WaterfallSound {
   init() {
     this.image.addEventListener("mouseenter", () => {
       this.audio.currentTime = 0;
+      this.audio.volume = .5;
       this.audio.play();
     });
 
