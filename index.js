@@ -81,9 +81,18 @@ relaxCircle.addEventListener("click", () => {
   breatheCycle();
 });
 
+//switch
+const darkToggle = document.getElementById("darkModeToggle");
+const darkOverlay = document.getElementById("darkOverlay");
 //Lamp Turning on-off
 lamp.addEventListener("click", () => {
-  lampOverlay.hidden = !lampOverlay.hidden;
+  if (lampOverlay.hidden) {
+    darkOverlay.classList.add("active");
+    lampOverlay.hidden = !lampOverlay.hidden;
+  } else {
+    darkOverlay.classList.remove("active");
+    lampOverlay.hidden = !lampOverlay.hidden;
+  }
 });
 
 //Music starting-stopping
@@ -194,15 +203,3 @@ thumbnails.forEach((thumb) => {
 //waterfall sound
 
 const waterfall = new WaterfallSound("#waterfall-img", "#waterfall-audio");
-
-//switch
-const darkToggle = document.getElementById("darkModeToggle");
-const darkOverlay = document.getElementById("darkOverlay");
-
-darkToggle.addEventListener("change", () => {
-  if (darkToggle.checked) {
-    darkOverlay.classList.add("active");
-  } else {
-    darkOverlay.classList.remove("active");
-  }
-});
