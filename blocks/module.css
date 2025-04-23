@@ -102,7 +102,7 @@
   height: 59%;
   border-radius: 10px;
   border: 1px solid white;
-  background-image: url("/images/bookshelf-background.png");
+  background-image: url("../images/bookshelf-background.png");
   background-size: cover;
   background-position: center;
   display: none;
