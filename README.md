@@ -35,6 +35,7 @@ Event-driven interactivity with clean separation of UI elements.
 Smooth CSS transitions and responsive animations.
 Usage of YouTube thumbnails and embedded iframe for video gallery.
 Flower positioning logic includes getBoundingClientRect() for boundary-safe random placement.
+Clip Path CSS allows accurate clickable object boxes. Helpful site to create complex clip paths: [https://bennettfeely.com/clippy/]
 
 Setup & Run
 Clone the repo:
