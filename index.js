@@ -9,6 +9,10 @@ const modalDefault = document.getElementById("windowModalDefault");
 const closeModalCustom = document.getElementById("closeModalCustom");
 const modalCustom = document.getElementById("windowModalCustom");
 
+//Bookshelf Const
+const closeBookshelfModal = document.getElementById("closeBookshelfModal");
+const modalBookshelf = document.getElementById("bookshelfModalCustom");
+
 //Breathing const
 const relaxCircle = document.getElementById("relaxCircle");
 const circleText = document.getElementById("circleText");
@@ -34,6 +38,11 @@ const tvOn = document.querySelector(".page__tv-on");
 
 //Flower const
 const flowerThumbs = document.querySelectorAll(".flower-thumb");
+
+//Books const
+const booksThumbs = document.querySelectorAll(".books");
+const bookDisplay = document.querySelector(".bookshelfQuotes");
+const booksQuote = document.getElementById("booksQuote");
 
 // Couch tv chanalls
 const theater = document.querySelector(".page__seating");
@@ -64,7 +73,17 @@ document.querySelector(".page__plant").addEventListener("click", function () {
 // Plant Module Closing
 closeModalCustom.addEventListener("click", () => {
   modalCustom.style.display = "none";
-  modalCustom.classList.remove("page__module--pop");
+  modalCustom.classList.remove("page__module--pop-up");
+});
+// Bookshelf Module Open
+document.querySelector(".page__book").addEventListener("click", function () {
+  modalBookshelf.style.display = "flex";
+  modalBookshelf.classList.add("page__module--pop");
+});
+// Bookshelf Module Closing
+closeBookshelfModal.addEventListener("click", () => {
+  modalBookshelf.style.display = "none";
+  modalBookshelf.classList.remove("page__module--pop-up");
 });
 
 // Window Module Opening
@@ -102,6 +121,16 @@ radio.addEventListener("click", () => {
   } else {
     music.pause();
   }
+});
+
+//Bookshelf Module Randomizer
+booksThumbs.forEach((book) => {
+  book.addEventListener("click", () => {
+    const quote = book.getAttribute("data-quote");
+    booksQuote.innerText = quote;
+    const bookImages = book.getAttribute("data-image");
+    modalBookshelf.style.background = `url('${bookImages}')`;
+  });
 });
 
 // Plant Module Randomizer
