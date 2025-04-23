@@ -103,7 +103,7 @@
   height: 59%;
   border-radius: 10px;
   border: 1px solid white;
-  background-image: url("/images/field.jpg");
+  background-image: url("../images/field.jpg");
   background-size: cover;
   background-position: center;
   display: none;
