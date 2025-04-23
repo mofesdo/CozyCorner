@@ -1,4 +1,5 @@
-# Cozy Corner is an interactive, ambient web application designed to create a calm, cozy digital space with a peaceful aesthetic. Visitors can interact with various elements in a room like turning on a TV, listening to waterfall sounds or background music, planting flowers, and engaging in guided breathing exercises.
+# Cozy Corner
+Cozy Corner is an interactive, ambient web application designed to create a calm, cozy digital space with a peaceful aesthetic. Visitors can interact with various elements in a room like turning on a TV, listening to waterfall sounds or background music, planting flowers, and engaging in guided breathing exercises.
 
 Live Preview Link : https://mofesdo.github.io/CozyCorner/
 
