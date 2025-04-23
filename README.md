@@ -31,11 +31,11 @@ One main video in center (dominant visual).
 Clicking any thumbnail loads and plays the video.
 
 Technical Highlights:
-Event-driven interactivity with clean separation of UI elements.
-Smooth CSS transitions and responsive animations.
-Usage of YouTube thumbnails and embedded iframe for video gallery.
-Flower positioning logic includes getBoundingClientRect() for boundary-safe random placement.
-Clip Path CSS allows accurate clickable object boxes. Helpful site to create complex clip paths: [https://bennettfeely.com/clippy/]
+- Event-driven interactivity with clean separation of UI elements.
+- Smooth CSS transitions and responsive animations.
+- Usage of YouTube thumbnails and embedded iframe for video gallery.
+- Flower positioning logic includes getBoundingClientRect() for boundary-safe random placement.
+- Clip Path CSS allows accurate clickable object boxes. Helpful site to create complex clip paths: [https://bennettfeely.com/clippy/]
 
 Setup & Run
 Clone the repo:
